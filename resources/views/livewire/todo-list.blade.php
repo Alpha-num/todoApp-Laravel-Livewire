@@ -9,7 +9,7 @@
     <ul class="container mt-6">
         @forelse($todos as $todo)
             <li wire:key="{{$todo->id}}" class="my-2 w-96 bg-gray-100 p-3 flex justify-between rounded-md mx-auto text-gray-600">
-                <span class="{{$todo->status == 'complete' ? 'line-through' : ''}}">{{ $todo->title }}</span>
+                <span class="{{$todo->status == 'complete' ? 'line-through font-bold' : ''}}">{{ $todo->title }}</span>
                 <div class="inline">
                     <button wire:confirm="Are you sure you want to delete" wire:click ="deleteTodo({{$todo->id}})" class="text-red-600 hover:text-red-500 ml-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5">
