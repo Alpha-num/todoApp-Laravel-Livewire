@@ -29,6 +29,15 @@ class TodoList extends Component
         Todo::find($id)->delete();
         $this->fetchTodos();
     }
+    public function toggleTodoStatus(Todo $todo){
+        if($todo->status == 'complete'){
+            $todo->update(['status' => 'pending']);
+        }else{
+            $todo->update(['status' => 'complete']);
+        }
+        $this->fetchTodos();
+        
+    }
     
     public function render()
     {
